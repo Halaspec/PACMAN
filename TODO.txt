@@ -1,0 +1,43 @@
+TODO:
+
+1-Interface (Fred)
+  -Terrain 2D, type labyrinthe (Fred) (-ok-)
+  -Murs bloquants (Fred) (-ok-)
+  -Passage vers l'autre côté (warparound) (Hamza) (-ok-)
+  -Vies (Hamza) (-ok-)
+  -Score (Hamza) (-ok-)
+  -Chronomètre (facultatif)
+  
+2-Contrôler le pacman
+  -Bouger dans les 4 sens (flèches directionnelles) (Hamza) (-ok-)
+  -Se bloque dès qu'il atteint un mur (Hamza) (-ok-)
+  -3 vie (Hamza) (-ok-)
+  -5000 pts = +1 life (Hamza) (-ok-)
+  
+3-Entités:
+  -Pacgommes: (Fred par rapport au terrain et l'implentation) (-ok-)
+    -Classique bleu (-ok-)
+    -Bonus 4:
+      -Violet: invisible + couleur jaune pâle (-ok-)
+      -Orange: super-pacman (-ok-)
+      -Vert: change/modifie le labyrinthe (-ok-)
+      -Quatrième???
+  -Fantômes: 4 de movement aléatoire (-ok-)
+    Si fan touche pacman = -1 vie (Hamza) (-ok-)
+    Si atteint mur then change de direction aléatoirement (Hamza) Buggé
+    
+4-Si plus de pacgommes = win (-ok-)
+5-Si 0 vie = lose (Hamza) (-ok-)
+
+
+Liste couleur: https://www.color-hex.com/color-palette/10122
+Mur = #000000
+Pacman = #fdff00
+Fantome 1 = #ea82e5
+Fantome 2 = #46bfee
+Fantome 3 = #d03e19
+Fantome 4 = #db851c
+Pacgommes classique = #2020d4
+Pacgommes violet = #9f40ff
+Pacgommes orange = #FFA500
+Pacgommes vert = #2ed12e
