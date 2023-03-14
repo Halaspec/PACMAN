@@ -3,6 +3,10 @@ package fr.upec.pacman;
 import javax.imageio.ImageIO;
 
 import javax.swing.*;
+
+import fr.upec.pacman.EntityState.AfraidGhost;
+import fr.upec.pacman.EntityState.NormalGhost;
+
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
@@ -151,11 +155,10 @@ public class GameView<BufferedImage> extends JComponent {
     }
 
     private void drawEnemy(Graphics g) {
-        image= new ImageIcon("ghost.jpg").getImage();
         for (Ghost ghost : game.getGhosts()) {
            // g.setColor(ghost.getColor());
            // g.fillOval(ghost.getX(), ghost.getY(), size, size);
-            g.drawImage(image, ghost.getX(), ghost.getY(), this);
+            g.drawImage(ghost.getImage(), ghost.getX(), ghost.getY(), this);
         }
     }
 
