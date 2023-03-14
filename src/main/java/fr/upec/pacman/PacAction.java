@@ -31,7 +31,7 @@ public class PacAction implements ActionListener {
         }
 
         if (map[(pacYMove) / 36][(pacXMove) / 36] != Type.W &&
-                map[(pacYMove) / 34][(pacXMove + 34) / 36] != Type.W &&
+                map[(pacYMove) / 36][(pacXMove + 34) / 36] != Type.W &&
                 map[(pacYMove + 34) / 36][(pacXMove) / 36] != Type.W &&
                 map[(pacYMove + 34) / 36][(pacXMove + 34) / 36] != Type.W) {
             switch (map[(pacYMove) / 36][(pacXMove) / 36]) {
