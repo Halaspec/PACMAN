@@ -4,8 +4,11 @@ import fr.upec.pacman.EntityState.NormalGhost;
 
 import java.awt.*;
 
+import javax.swing.ImageIcon;
+
 public class Ghost extends Entity {
     private final NormalGhost normalState;
+    private Image image = new ImageIcon("images/ghost_left.png").getImage();
 
     public Ghost(int x, int y, Color color) {
         super(x, y, Direction.random(), color, new NormalGhost());
@@ -15,5 +18,13 @@ public class Ghost extends Entity {
 
     public NormalGhost getNormalState() {
         return normalState;
+    }
+
+    public void setImage(Image img){
+        this.image=img;
+    }
+
+    public Image getImage(){
+        return this.image;
     }
 }

@@ -1,19 +1,28 @@
 package fr.upec.pacman;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.imageio.ImageIO;
 
-public class GameView extends JComponent {
+import javax.swing.*;
+
+import fr.upec.pacman.EntityState.AfraidGhost;
+import fr.upec.pacman.EntityState.NormalGhost;
+
+import java.awt.*;
+import java.io.File;
+import java.io.IOException;
+
+public class GameView<BufferedImage> extends JComponent {
     public final static int size = 36;
     private final int footerX;
     private final int footerY;
-    private boolean start; //Pour commencer la partie
+    private boolean start; // Pour commencer la partie
     private Game game;
-    private Timer timerGhost; //Ajouter la classe de Action listener
+    private Timer timerGhost; // Ajouter la classe de Action listener
     private Timer timerPacman;
     private Frame frame;
+    private Image image;
 
-    //Constructeur
+    // Constructeur
     public GameView(Frame f, Game game) {
         super();
         setStart(false);
@@ -72,7 +81,7 @@ public class GameView extends JComponent {
 
         int x;
         int y = 0;
-        // x = width y = height  // size taille du bloc
+        // x = width y = height // size taille du bloc
 
         for (Type[] i : game.getMap().getMap()) {
             x = 0;
@@ -128,12 +137,14 @@ public class GameView extends JComponent {
         if (game.getPacman().isInvisible()) {
             g.setColor(Color.WHITE);
             g.setFont(new Font("Arial", Font.PLAIN, 17));
-            g.drawString("Invisible: " + (10 - (game.getPacman().getInvisibleTimer() / 1000)), (footerX / 3) * 2, footerY + 15);
+            g.drawString("Invisible: " + (10 - (game.getPacman().getInvisibleTimer() / 1000)), (footerX / 3) * 2,
+                    footerY + 15);
         }
         if (game.getPacman().isSuperPow()) {
             g.setColor(Color.RED);
             g.setFont(new Font("Arial", Font.PLAIN, 17));
-            g.drawString("Super Power: " + (10 - (game.getPacman().getSuperPowTimer() / 1000)), (footerX / 3) * 2, footerY + 30);
+            g.drawString("Super Power: " + (10 - (game.getPacman().getSuperPowTimer() / 1000)), (footerX / 3) * 2,
+                    footerY + 30);
         }
     }
 
@@ -145,8 +156,9 @@ public class GameView extends JComponent {
 
     private void drawEnemy(Graphics g) {
         for (Ghost ghost : game.getGhosts()) {
-            g.setColor(ghost.getColor());
-            g.fillOval(ghost.getX(), ghost.getY(), size, size);
+           // g.setColor(ghost.getColor());
+           // g.fillOval(ghost.getX(), ghost.getY(), size, size);
+            g.drawImage(ghost.getImage(), ghost.getX(), ghost.getY(), this);
         }
     }
 
