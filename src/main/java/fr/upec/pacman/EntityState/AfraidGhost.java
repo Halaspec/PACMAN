@@ -7,6 +7,7 @@ import java.awt.*;
 public class AfraidGhost implements EntityState {
     private Ghost ghost;
 
+
     public AfraidGhost(Ghost ghost) {
         this.ghost = ghost;
     }
