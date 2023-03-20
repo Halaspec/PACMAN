@@ -24,6 +24,15 @@ class PacMove implements KeyListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
+        Type[][] map = game.getMap().getMap();
+        int pacXMove = game.getPacman().getX() + game.getPacman().getDirection().getDx();
+        int pacYMove = game.getPacman().getY() + game.getPacman().getDirection().getDy();
+        if (pacXMove == 0 && pacYMove == 252) {
+            pacXMove = 572;
+        }
+        if (pacXMove == 576 && pacYMove == 252) {
+            pacXMove = 4;
+        }
         //In-game
         if (!game.win() || game.getPacman().isAlive()) {
             switch (e.getKeyCode()) {
