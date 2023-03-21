@@ -1,0 +1,10 @@
+root       17836  0.0  0.0      0     0 ?        I    09:37   0:00 [kworker/u24:2-rpciod]
+root       17837  0.0  0.0      0     0 ?        I    09:37   0:00 [kworker/u24:3-flush-259:0]
+root       17838  0.0  0.0      0     0 ?        I    09:37   0:00 [kworker/u24:4-rpciod]
+root       18083  0.0  0.0      0     0 ?        I    09:37   0:00 [kworker/2:0]
+root       18527  0.0  0.0      0     0 ?        I    09:37   0:00 [kworker/9:0-events]
+root       18528  0.0  0.0      0     0 ?        I    09:37   0:00 [kworker/9:1-events]
+root       22016  0.0  0.0      0     0 ?        I    09:41   0:00 [kworker/0:0]
+root       22284  0.0  0.0      0     0 ?        I    09:42   0:00 [kworker/7:1-events]
+12207466   22533  0.0  0.0  19180  3732 pts/0    R+   09:42   0:00 ps aux
+12207466   22534  0.0  0.0   6260   704 pts/0    S+   09:42   0:00 grep --color=auto Pacman -9
