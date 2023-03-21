@@ -14,7 +14,7 @@ public class EnemyAction implements ActionListener {
     private Image ghost_right = new ImageIcon("images/ghost_right.png").getImage();
     private Image ghost_down = new ImageIcon("images/ghost_down.png").getImage();
     private Image ghost_up = new ImageIcon("images/ghost_up.png").getImage();
-
+    private Image afraid = new ImageIcon("images/afraid.png").getImage();
 
     public EnemyAction(Ghost[] ghosts, Game game, GameView p) {
         this.ghosts = ghosts;
@@ -54,7 +54,7 @@ public class EnemyAction implements ActionListener {
             g.setDirection(futur_direction);
             xMove = g.getX() + g.getDirection().getDx();
             yMove = g.getY() + g.getDirection().getDy();
-            swap_image(g ,futur_direction);
+            swap_image(g, futur_direction);
         }
 
         g.setX(xMove);
@@ -65,16 +65,32 @@ public class EnemyAction implements ActionListener {
     private void swap_image(Ghost g, Direction futur_direction) {
         switch (futur_direction) {
             case DOWN:
-                g.setImage(ghost_down);
+                if (g.getState().toString() == "Normal") {
+                    g.setImage(ghost_down);
+                }else{
+                    g.setImage(afraid);
+                }
                 break;
             case UP:
-                g.setImage(ghost_up);
+                if (g.getState().toString() == "Normal") {
+                    g.setImage(ghost_up);
+                }else{
+                    g.setImage(afraid);
+                }
                 break;
             case LEFT:
-                g.setImage(ghost_left);
+                if (g.getState().toString() == "Normal") {
+                    g.setImage(ghost_left);
+                }else{
+                    g.setImage(afraid);
+                }
                 break;
             case RIGHT:
-                g.setImage(ghost_right);
+                if (g.getState().toString() == "Normal") {
+                    g.setImage(ghost_right);
+                }else{
+                    g.setImage(afraid);
+                }
                 break;
         }
     }

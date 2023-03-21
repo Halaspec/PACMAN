@@ -42,4 +42,10 @@ public class InvisiblePacman implements EntityState {
         }, 10, TimeUnit.SECONDS);
         executor.shutdown();
     }
+
+    @Override
+    public String toString() {
+        return "Invisible";
+    }
+    
 }

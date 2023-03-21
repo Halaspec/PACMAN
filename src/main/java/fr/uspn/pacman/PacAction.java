@@ -68,16 +68,16 @@ public class PacAction implements ActionListener {
             /* Compléter le code pour gérer les déplacements du pacman contre un mur */
             /* */
             if(pacman.getDirection() == Direction.UP){
-                System.out.println("Bloqué par le mur du haut");
+             //   System.out.println("Bloqué par le mur du haut");
             }
             else if(pacman.getDirection() == Direction.DOWN){
-                System.out.println("Bloqué par le mur du bas");
+               // System.out.println("Bloqué par le mur du bas");
             }
             else if(pacman.getDirection() == Direction.RIGHT){
-                System.out.println("Bloqué par le mur à droite");
+             //   System.out.println("Bloqué par le mur à droite");
             }
             else{
-                System.out.println("Bloqué par le mur à gauche");
+               // System.out.println("Bloqué par le mur à gauche");
             }
         }
 

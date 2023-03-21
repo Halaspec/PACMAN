@@ -10,9 +10,12 @@ import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
+import javax.swing.ImageIcon;
+
 public class SuperPovPacman implements EntityState {
     private Game game;
     private Pacman pacman;
+    private Image ghost = new ImageIcon("images/ghost_left.png").getImage();
 
     public SuperPovPacman(Game game, Pacman pacman) {
         this.game = game;
@@ -49,6 +52,7 @@ public class SuperPovPacman implements EntityState {
             for (Ghost g : game.getGhosts()) {
                 g.setState(g.getNormalState());
                 g.state();
+                g.setImage(ghost);
             }
         });
         executor.schedule(() -> {

@@ -33,4 +33,10 @@ public class NormalGhost implements EntityState {
         return this.image;
     }
 
+    @Override
+    public String toString() {
+        return "Normal";
+    }
+    
+
 }

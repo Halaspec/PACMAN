@@ -37,6 +37,7 @@ class PacMove implements KeyListener {
         if (!game.win() || game.getPacman().isAlive()) {
             switch (e.getKeyCode()) {
                 case KeyEvent.VK_LEFT:
+                
                     game.getPacman().setDirection(Direction.LEFT);
                     break;
                 case KeyEvent.VK_RIGHT:

@@ -25,4 +25,10 @@ public class AfraidGhost implements EntityState {
     }
 
     public Image getImage(){return this.image;}
+
+    @Override
+    public String toString() {
+        return "Afraid";
+    }
+    
 }
