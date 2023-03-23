@@ -42,14 +42,19 @@ public class Pacman extends Entity {
         int gY = ghost.getY();
 
         if (!invisible || superPow) {
-            if ((gX / 36 == pacX / 36 && gY / 36 == pacY / 36) ||
-                    (gX / 36 == (pacX) / 36 && gY / 36 == (pacY + 35) / 36) ||
-                    (gX / 36 == (pacX + 35) / 36 && gY / 36 == (pacY) / 36) ||
-                    (gX / 36 == (pacX + 35) / 36 && gY / 36 == (pacY + 35) / 36)) {
+            if ((gY == pacY && gX + 35 >= pacX && gX + 35 <= pacX + 35) || // Right
+                    (gX == pacX && gY >= pacY && gY <= pacY + 35) || // up
+                    (gX == pacX && gY + 35 >= pacY && gY + 35 <= pacY + 35) || // down
+                    (gY == pacY && gX >= pacX && gX <= pacX + 35) // Left
+            ) {
                 if (superPow) {
                     superPow(ghost);
                     return false;
                 } else {
+                    // System.out.println("Pacman x: " + pacX + " y: " + pacY + " Ghost x: " + gX +
+                    // " y: " + gY);
+                    if (Music.sound)
+                        Music.play_music(2); // Play the death music
                     life--;
                     setX(8 * 36);
                     setY(11 * 36);
@@ -103,6 +108,8 @@ public class Pacman extends Entity {
     public void superPow(Ghost g) {
         g.setX(36 * 8);
         g.setY(36 * 7);
+        if (Music.sound)
+            Music.play_music(4); // Play the eat ghost music
     }
 
     public void eatMix() {

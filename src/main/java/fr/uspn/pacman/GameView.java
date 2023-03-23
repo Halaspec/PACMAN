@@ -21,6 +21,11 @@ public class GameView<BufferedImage> extends JComponent {
     private Timer timerPacman;
     private Frame frame;
     private Image image;
+    private final Image invisible =new ImageIcon("images/invisible.png").getImage(); ;
+    private final Image superpov =new ImageIcon("images/superpov.png").getImage(); ;
+    private final Image wall =new ImageIcon("images/wall.png").getImage(); ;
+
+
 
     // Constructeur
     public GameView(Frame f, Game game) {
@@ -100,14 +105,17 @@ public class GameView<BufferedImage> extends JComponent {
                     case I:
                         g.setColor(Color.decode("#9f40ff"));
                         g.fillOval(x + 10, y + 10, size - 10 * 2, size - 10 * 2);
+                        g.drawImage(invisible, x, y, this);
                         break;
                     case S:
                         g.setColor(Color.decode("#FFA500"));
                         g.fillOval(x + 10, y + 10, size - 10 * 2, size - 10 * 2);
+                        g.drawImage(superpov, x, y, this);
                         break;
                     case M:
                         g.setColor(Color.decode("#2ed12e"));
                         g.fillOval(x + 10, y + 10, size - 10 * 2, size - 10 * 2);
+                        g.drawImage(wall, x, y, this);
                         break;
                     case N:
                         g.setColor(Color.black);
