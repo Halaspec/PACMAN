@@ -45,6 +45,13 @@ public class EnemyAction implements ActionListener {
         int xMove = g.getX() + g.getDirection().getDx();
         int yMove = g.getY() + g.getDirection().getDy();
 
+        if (xMove == 0 && yMove == 252) {
+            xMove = 572;
+        }
+        if (xMove == 576 && yMove == 252) {
+            xMove = 4;
+        }
+
         while (map[(yMove) / 36][(xMove) / 36] == Type.W ||
                 map[(yMove) / 36][(xMove + 34) / 36] == Type.W ||
                 map[(yMove + 34) / 36][(xMove) / 36] == Type.W ||

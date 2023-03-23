@@ -1,6 +1,7 @@
 package fr.uspn.pacman;
 
 import java.awt.*;
+import java.util.Scanner;
 
 public class Game {
     private GameMap map;
@@ -11,17 +12,20 @@ public class Game {
     private int score;
 
     public Game(Frame f) {
+        this.setMusic();
         this.map = new GameMap();
         this.pacman = new Pacman(this);
         int size = 36;
-        this.ghosts = new Ghost[]{
-                new Ghost(size * 7, size * 5, Color.decode("#ea82e5")), //Blue
-                new Ghost(size * 8, size * 5, Color.decode("#46bfee")), //Red
-                new Ghost(size * 9, size * 5, Color.decode("#db851c")), //Purple
-                new Ghost(size * 8, size * 9, Color.decode("#d03e19"))};//Orange
+        this.ghosts = new Ghost[] {
+                new Ghost(size * 7, size * 5, Color.decode("#ea82e5")), // Blue
+                new Ghost(size * 8, size * 5, Color.decode("#46bfee")), // Red
+                new Ghost(size * 9, size * 5, Color.decode("#db851c")), // Purple
+                new Ghost(size * 8, size * 9, Color.decode("#d03e19")) };// Orange
         this.p = new GameView(f, this);
         this.pacMove = new PacMove(this, p);
         this.score = 0;
+        if (Music.sound)
+            Music.play_music(1); // Play the beginning music
     }
 
     public PacMove getPacMove() {
@@ -64,5 +68,36 @@ public class Game {
 
     public boolean win() {
         return pacman.isAlive() && map.isAllPacGumAte();
+    }
+
+    public boolean setMusic() {
+       banner();
+        System.out.print("Activer la musique ? \n (1: Oui, 2: Non) \n >> ");
+        Scanner sc = new Scanner(System.in);
+        int choix = sc.nextInt();
+        if (choix == 1) {
+            Music.sound = true;
+            return true;
+        } else if (choix == 2) {
+            Music.sound = false;
+            return false;
+        } else {
+            System.out.println("Veuillez entrer 1 ou 2");
+            return setMusic();
+        }
+    }
+
+    public void banner(){
+        String mot = "\n ██████╗  █████╗  ██████╗███╗   ███╗ █████╗ ███╗   ██╗ \n ██╔══██╗██╔══██╗██╔════╝████╗ ████║██╔══██╗████╗  ██║ \n ██████╔╝███████║██║     ██╔████╔██║███████║██╔██╗ ██║ \n ██╔═══╝ ██╔══██║██║     ██║╚██╔╝██║██╔══██║██║╚██╗██║ \n ██║     ██║  ██║╚██████╗██║ ╚═╝ ██║██║  ██║██║ ╚████║ \n ╚═╝     ╚═╝  ╚═╝ ╚═════╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ \n ";
+        for (int i = 0; i < mot.length(); i++){
+            try {
+                Thread.sleep(8);
+            } catch (InterruptedException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            System.out.print(mot.charAt(i));
+        }
+            
     }
 }
