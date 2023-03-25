@@ -27,6 +27,8 @@ class PacMove implements KeyListener {
         Type[][] map = game.getMap().getMap();
         int pacXMove = game.getPacman().getX() + game.getPacman().getDirection().getDx();
         int pacYMove = game.getPacman().getY() + game.getPacman().getDirection().getDy();
+        Direction oldDirection = game.getPacman().getDirection();
+
         if (pacXMove == 0 && pacYMove == 252) {
             pacXMove = 572;
         }
@@ -37,14 +39,36 @@ class PacMove implements KeyListener {
         if (!game.win() || game.getPacman().isAlive()) {
             switch (e.getKeyCode()) {
                 case KeyEvent.VK_LEFT:
-                
                     game.getPacman().setDirection(Direction.LEFT);
                     break;
                 case KeyEvent.VK_RIGHT:
                     game.getPacman().setDirection(Direction.RIGHT);
                     break;
                 case KeyEvent.VK_UP:
+                    oldDirection = game.getPacman().getDirection();
                     game.getPacman().setDirection(Direction.UP);
+                    pacXMove = game.getPacman().getX() + game.getPacman().getDirection().getDx();
+                    if(pacXMove % 36 < 22 && oldDirection == Direction.LEFT) { 
+                        pacXMove -= pacXMove % 36;
+                        if(map[(pacYMove - 34) / 36][(pacXMove) / 36] != Type.W){
+                            game.getPacman().setX(pacXMove);
+                        }
+                        else {
+                            game.getPacman().setDirection(oldDirection);
+                        }
+                    } 
+                    else if (pacXMove % 36 > 14 && oldDirection == Direction.RIGHT){
+                        pacXMove += 36 - (pacXMove % 36);
+                        if(map[(pacYMove - 34) / 36][(pacXMove) / 36] != Type.W){
+                            game.getPacman().setX(pacXMove);
+                        }
+                        else {
+                            game.getPacman().setDirection(oldDirection);
+                        }
+                    }
+                    else {
+                        game.getPacman().setDirection(oldDirection);
+                    }
                     break;
                 case KeyEvent.VK_DOWN:
                     game.getPacman().setDirection(Direction.DOWN);
