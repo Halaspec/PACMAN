@@ -151,7 +151,7 @@ public class GameView<BufferedImage> extends JComponent {
         if (game.getPacman().isSuperPow()) {
             g.setColor(Color.RED);
             g.setFont(new Font("Arial", Font.PLAIN, 17));
-            g.drawString("Super Power: " + (10 - (game.getPacman().getSuperPowTimer() / 1000)), (footerX / 3) * 2,
+            g.drawString("Super Power: " + (6 - (game.getPacman().getSuperPowTimer() / 1000)), (footerX / 3) * 2,
                     footerY + 30);
         }
     }

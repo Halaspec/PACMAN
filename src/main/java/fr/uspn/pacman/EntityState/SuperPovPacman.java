@@ -57,7 +57,7 @@ public class SuperPovPacman implements EntityState {
         });
         executor.schedule(() -> {
             future.cancel(true);
-        }, 10, TimeUnit.SECONDS);
+        }, 6, TimeUnit.SECONDS);
         executor.shutdown();
     }
 }
