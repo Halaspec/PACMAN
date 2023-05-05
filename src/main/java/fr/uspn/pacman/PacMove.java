@@ -35,7 +35,7 @@ class PacMove implements KeyListener {
         if (pacXMove == 576 && pacYMove == 252) {
             pacXMove = 4;
         }
-        //In-game
+       
         if (!game.win() || game.getPacman().isAlive()) {
             switch (e.getKeyCode()) {
                 case KeyEvent.VK_LEFT:
