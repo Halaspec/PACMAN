@@ -76,7 +76,7 @@ public class GameMap {
             map[5][16] = W; // test
             map[9][16] = W;
         } else {
-            map[7][2] = N;
+            map[7][2] = W;
             map[7][14] = N;
             map[5][0] = W; // test
             map[9][0] = W;  // test
