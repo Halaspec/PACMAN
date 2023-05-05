@@ -15,7 +15,7 @@ public class GameView<BufferedImage> extends JComponent {
     public final static int size = 36;
     private final int footerX;
     private final int footerY;
-    private boolean start; // Pour commencer la partie
+    private boolean start; 
     private Game game;
     private Timer timerGhost; // Ajouter la classe de Action listener
     private Timer timerPacman;
@@ -86,7 +86,7 @@ public class GameView<BufferedImage> extends JComponent {
 
         int x;
         int y = 0;
-        // x = width y = height // size taille du bloc
+        // x = width y = height  size taille du bloc
 
         for (Type[] i : game.getMap().getMap()) {
             x = 0;
