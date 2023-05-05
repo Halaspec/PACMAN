@@ -27,7 +27,7 @@ public class EnemyAction implements ActionListener {
         for (Ghost g : ghosts) {
             wall(g, game.getMap().getMap());
             p.repaint();
-            checkLife(g); // Verifie si ca touche
+            checkLife(g); 
         }
     }
 

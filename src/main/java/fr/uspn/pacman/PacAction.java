@@ -67,6 +67,19 @@ public class PacAction implements ActionListener {
             game.getMap().replaceNothing(pacman.getY() / 36, pacman.getX() / 36);
             pacman.setX(pacXMove);
             pacman.setY(pacYMove);
+
+
+        } else {
+            if (pacman.getDirection() == Direction.UP) {
+                // System.out.println("Bloqué par le mur du haut");
+            } else if (pacman.getDirection() == Direction.DOWN) {
+                // System.out.println("Bloqué par le mur du bas");
+            } else if (pacman.getDirection() == Direction.RIGHT) {
+                // System.out.println("Bloqué par le mur à droite");
+            } else {
+                // System.out.println("Bloqué par le mur à gauche");
+            }
+
         }
         view.repaint(); 
     }

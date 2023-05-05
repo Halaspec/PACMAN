@@ -86,7 +86,6 @@ public class GameView<BufferedImage> extends JComponent {
 
         int x;
         int y = 0;
-        // x = width y = height size taille du bloc
 
         for (Type[] i : game.getMap().getMap()) {
             x = 0;
