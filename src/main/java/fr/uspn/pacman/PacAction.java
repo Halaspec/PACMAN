@@ -68,6 +68,6 @@ public class PacAction implements ActionListener {
             pacman.setX(pacXMove);
             pacman.setY(pacYMove);
         }
-        view.repaint();
+        view.repaint(); 
     }
 }
