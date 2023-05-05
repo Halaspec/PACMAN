@@ -52,7 +52,7 @@ public class Music {
                     clip.open(audioInputStream);
                     clip.start();
                     break;
-            }
+            } 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Error with playing sound.");
         }
