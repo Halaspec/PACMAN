@@ -62,8 +62,8 @@ public class GameMap {
 
     private void changeWall() {
         if (blockingWall) {
-            map[7][2] = W; // wrap
-            map[7][14] = W; // wrap
+            map[7][2] = W; // wrap bloc
+            map[7][14] = W; // wrap bloc
             map[7][4] = N;
             map[7][12] = N;
             map[3][8] = W;
@@ -73,13 +73,13 @@ public class GameMap {
             map[6][15] = N;
             map[8][15] = N;
             map[10][15] = N;
-            map[5][16] = W; // test
+            map[5][16] = W; 
             map[9][16] = W;
         } else {
             map[7][2] = W;
             map[7][14] = N;
-            map[5][0] = W; // test
-            map[9][0] = W;  // test
+            map[5][0] = W;
+            map[9][0] = W;  
             map[7][6] = N;
             map[7][10] = N;
             map[4][1] = N;
