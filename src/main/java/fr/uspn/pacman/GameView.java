@@ -15,7 +15,7 @@ public class GameView<BufferedImage> extends JComponent {
     public final static int size = 36;
     private final int footerX;
     private final int footerY;
-    private boolean start; 
+    private boolean start;
     private Game game;
     private Timer timerGhost; // Ajouter la classe de Action listener
     private Timer timerPacman;
@@ -86,7 +86,6 @@ public class GameView<BufferedImage> extends JComponent {
 
         int x;
         int y = 0;
-        // x = width y = height  size taille du bloc
 
         for (Type[] i : game.getMap().getMap()) {
             x = 0;
@@ -151,7 +150,7 @@ public class GameView<BufferedImage> extends JComponent {
         if (game.getPacman().isSuperPow()) {
             g.setColor(Color.RED);
             g.setFont(new Font("Arial", Font.PLAIN, 17));
-            g.drawString("Super Power: " + (10 - (game.getPacman().getSuperPowTimer() / 1000)), (footerX / 3) * 2,
+            g.drawString("Super Power: " + (6 - (game.getPacman().getSuperPowTimer() / 1000)), (footerX / 3) * 2,
                     footerY + 30);
         }
     }

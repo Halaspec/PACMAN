@@ -55,6 +55,10 @@ public class PacAction implements ActionListener {
                 case M:
                     game.addScore(1000);
                     game.getPacman().eatMix();
+                    for(int i = 0 ; i < game.getGhosts().length ; i++){
+                        game.getGhosts()[i].setX(36 * 7);
+                        game.getGhosts()[i].setY(36 * 5);
+                    }
                     break;
                 default:
                     break;
@@ -63,6 +67,8 @@ public class PacAction implements ActionListener {
             game.getMap().replaceNothing(pacman.getY() / 36, pacman.getX() / 36);
             pacman.setX(pacXMove);
             pacman.setY(pacYMove);
+
+
         } else {
             if (pacman.getDirection() == Direction.UP) {
                 // System.out.println("Bloqué par le mur du haut");
@@ -73,8 +79,8 @@ public class PacAction implements ActionListener {
             } else {
                 // System.out.println("Bloqué par le mur à gauche");
             }
-        }
 
-        view.repaint();
+        }
+        view.repaint(); 
     }
 }

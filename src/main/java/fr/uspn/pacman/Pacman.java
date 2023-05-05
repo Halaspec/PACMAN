@@ -52,7 +52,7 @@ public class Pacman extends Entity {
                     return false;
                 } else {
                     if (Music.sound)
-                        Music.play_music(2); // Play the death music
+                        Music.play_music(2);
                     life--;
                     setX(8 * 36);
                     setY(11 * 36);
@@ -107,7 +107,7 @@ public class Pacman extends Entity {
         g.setX(36 * 8);
         g.setY(36 * 7);
         if (Music.sound)
-            Music.play_music(4); // Play the eat ghost music
+            Music.play_music(4);
     }
 
     public void eatMix() {

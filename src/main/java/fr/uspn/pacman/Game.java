@@ -93,6 +93,7 @@ public class Game {
             try {
                 Thread.sleep(8);
             } catch (InterruptedException e) {
+
                 e.printStackTrace();
             }
             System.out.print(mot.charAt(i));

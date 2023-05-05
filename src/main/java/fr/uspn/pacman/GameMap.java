@@ -78,6 +78,8 @@ public class GameMap {
         } else {
             map[7][2] = W;
             map[7][14] = N;
+            map[5][0] = W; 
+            map[9][0] = W; 
             map[5][0] = W;
             map[9][0] = W;  
             map[7][6] = N;
