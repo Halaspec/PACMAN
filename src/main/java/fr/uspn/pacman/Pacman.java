@@ -51,8 +51,6 @@ public class Pacman extends Entity {
                     superPow(ghost);
                     return false;
                 } else {
-                    // System.out.println("Pacman x: " + pacX + " y: " + pacY + " Ghost x: " + gX +
-                    // " y: " + gY);
                     if (Music.sound)
                         Music.play_music(2); // Play the death music
                     life--;
