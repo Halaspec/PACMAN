@@ -73,13 +73,13 @@ public class GameMap {
             map[6][15] = N;
             map[8][15] = N;
             map[10][15] = N;
-            map[5][16] = W; // test
+            map[5][16] = W; 
             map[9][16] = W;
         } else {
             map[7][2] = N;
             map[7][14] = N;
-            map[5][0] = W; // test
-            map[9][0] = W;  // test
+            map[5][0] = W; 
+            map[9][0] = W; 
             map[7][6] = N;
             map[7][10] = N;
             map[4][1] = N;
