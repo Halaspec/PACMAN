@@ -21,13 +21,7 @@ public class PacAction implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         Type[][] map = game.getMap().getMap();
         int pacXMove = pacman.getX() + pacman.getDirection().getDx();
-        // System.out.println("pacman.getDirection().getDx() = " +
-        // pacman.getDirection().getDx());
-        // System.out.println("pacXMove = " + pacXMove);
         int pacYMove = pacman.getY() + pacman.getDirection().getDy();
-        // System.out.println("pacman.getDirection().getDy() = " +
-        // pacman.getDirection().getDy());
-        // System.out.println("pacYMove = " + pacYMove);
 
         if (pacXMove == 0 && pacYMove == 252) {
             pacXMove = 572;
@@ -70,8 +64,6 @@ public class PacAction implements ActionListener {
             pacman.setX(pacXMove);
             pacman.setY(pacYMove);
         } else {
-            /* Compléter le code pour gérer les déplacements du pacman contre un mur */
-            /* */
             if (pacman.getDirection() == Direction.UP) {
                 // System.out.println("Bloqué par le mur du haut");
             } else if (pacman.getDirection() == Direction.DOWN) {
